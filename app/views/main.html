@@ -3,8 +3,11 @@
 </aside>
 
 <div class="jumbotron">
-  <searcher></searcher>
+  <searcher process-result="processResult(emissions)"></searcher>
 </div>
 
+<div class="trip" ng-if="startTrip">
+  <pre>{{emissions|json}}</pre>
+</div>
 
 <random-fact term="global warming"></random-fact>

@@ -7,37 +7,12 @@
  * # searcher
  */
 angular.module('co2poApp')
-  .directive('searcher', function () {
+  .directive('searcher', function (Vehicle) {
     return {
       templateUrl: 'views/directives/searcher.html',
       restrict: 'E',
       link: function (scope) {
-        scope.vehicles = [
-          {
-            name: 'Car',
-            type: 'car'
-          },
-          {
-            name: 'Bus',
-            type: 'bus'
-          },
-          {
-            name: 'Train/Tram/Subway',
-            type: 'train-tram-subway'
-          },
-          {
-            name: 'Motorcycle',
-            type: 'motorcycle'
-          },
-          {
-            name: 'Airplane',
-            type: 'airplane'
-          },
-          {
-            name: 'Ferry',
-            type: 'ferry'
-          }
-        ];
+        scope.vehicles = Vehicle.vehicles;
         
         scope.searchForm = {
           origin: undefined,

@@ -1,0 +1,39 @@
+﻿a {
+  color: #FFF; }
+
+.classname {
+  border: solid 1px #2d2d2d;
+  text-align: center;
+  background: #2a2b69;
+  padding: 100px 50px 100px 50px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+
+.classname {
+  -webkit-animation: cssAnimation 3.0227s 14 ease;
+  -moz-animation: cssAnimation 3.0227s 14 ease;
+  -o-animation: cssAnimation 3.0227s 14 ease; }
+
+@-webkit-keyframes cssAnimation {
+  from {
+    -webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+
+  to {
+    -webkit-transform: rotate(98deg) scale(1) skew(1deg) translate(119px); } }
+
+@-moz-keyframes cssAnimation {
+  from {
+    -moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+
+  to {
+    -moz-transform: rotate(98deg) scale(1) skew(1deg) translate(119px); } }
+
+@-o-keyframes cssAnimation {
+  from {
+    -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+
+  to {
+    -o-transform: rotate(98deg) scale(1) skew(1deg) translate(119px); } }
+
+/*# sourceMappingURL=trip.css.map */

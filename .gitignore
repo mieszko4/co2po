@@ -4,6 +4,7 @@ dist
 .sass-cache
 bower_components
 co2po.vbproj
+co2po.v12.suo
 "My Project"
 bin
 obj

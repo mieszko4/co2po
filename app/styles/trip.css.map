@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "file": "trip.css",
+  "sources": [
+    "trip.scss"
+  ],
+  "names": [],
+  "mappings": "AAAA;EACI,OAAO;;AAMX;EACI,QAAQ;EACR,YAAY;EACZ,YAAY;EACZ,SAAS;EACT,oBAAoB;EACpB,uBAAuB;EACvB,eAAe;;AAGnB;EACI,mBAAmB;EACnB,gBAAgB;EAChB,cAAc;;mBAGC;EAAnB;IAEQ,mBAA8B;;EACtC;IAGQ,mBAA+B;;gBAIvB;EAAhB;IAEQ,gBAA2B;;EACnC;IAGQ,gBAA4B;;cAItB;EAAd;IAEQ,cAAyB;;EACjC;IAGQ,cAA0B"
+}

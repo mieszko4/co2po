@@ -9,9 +9,13 @@
  */
 angular.module('co2poApp')
   .controller('TripCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+      $scope.$on('rockAndRoll', function (e, direction) {
+
+          console.log('la tortura');
+      })
+  })
+.controller('sliderController', function ($scope) {
+    $scope.fireAnimation = function (direction) {
+        $scope.$emit('rockAndRoll', direction);
+    }
+});

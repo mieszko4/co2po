@@ -1,0 +1,13 @@
+{
+  "name": "co2po-test",
+  "version": "0.0.0",
+  "description": "co2po-test",
+  "main": "server.js",
+  "author": {
+    "name": "Martina",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "^4.10.4"
+  }
+}

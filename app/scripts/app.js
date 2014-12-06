@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ui.bootstrap',
-    'ngTouch'
+    'ngTouch',
+    'google.places'
   ])
   .config(function ($routeProvider) {
     $routeProvider

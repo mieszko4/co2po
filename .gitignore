@@ -3,3 +3,7 @@ dist
 .tmp
 .sass-cache
 bower_components
+co2po.vbproj
+"My Project"
+bin
+obj

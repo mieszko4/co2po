@@ -7,14 +7,13 @@
  * # randomFact
  */
 angular.module('co2poApp')
-  .directive('randomFact', function () {
+  .directive('randomFact', function (randomFact) {
     return {
       scope: { term: '@' },
       templateUrl: 'views/directives/random-fact.html',
       restrict: 'E',
       link: function (scope) {
-        console.log(scope.term);
-        scope.fact = 'This is a random fact';
+        scope.fact = randomFact.getFact(scope.term);
       }
     };
   });

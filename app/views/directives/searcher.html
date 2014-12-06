@@ -1,0 +1,25 @@
+<form ng-submit="search(searchForm)" class="form-horizontal" action="" method="POST">
+  <fieldset>
+    <div class="control-group">
+      <input ng-model="searchForm.origin" type="text" id="origin" name="origin" placeholder="Origin" required>
+    </div>
+
+    <div class="control-group">
+      <input ng-model="searchForm.destination" type="text" id="destination" name="destination" placeholder="Destination" required>
+    </div>
+    
+    <div class="control-group">
+      <div ng-repeat="vehicle in vehicles">
+        <label for="vehicle-{{vehicle.type}}">{{vehicle.name}}</label>
+        <input id="vehicle-{{vehicle.type}}" name="vehicle" type="radio" value="" />
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

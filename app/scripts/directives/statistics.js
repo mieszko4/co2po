@@ -9,17 +9,23 @@
 angular.module('co2poApp')
   .directive('statistics', function (Vehicle) {
     return {
+      scope: { origin: '=', destination: '=' },
       templateUrl: 'views/directives/statistics.html',
       restrict: 'E',
       link: function (scope) {
-        scope.origin = {
-          lat: 45.374546,
-          lng: 15.017002
-        };
-        scope.destination = {
-          lat: 45.815123,
-          lng: 15.981682
-        };
+        if (typeof scope.origin === 'undefined') {
+          scope.origin = {
+            lat: 45.374546,
+            lng: 15.017002
+          };
+        }
+        
+        if (typeof scope.destination === 'undefined') {
+          scope.destination = {
+            lat: 45.815123,
+            lng: 15.981682
+          };
+        }
         
         scope.maxCO2 = undefined;
         scope.distance = undefined;

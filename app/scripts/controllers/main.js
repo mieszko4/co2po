@@ -9,12 +9,13 @@
  */
 angular.module('co2poApp')
   .controller('MainCtrl', function ($scope) {
+    $scope.showResult = false;
     $scope.startTrip = false;
     $scope.origin = undefined;
     $scope.destination = undefined;
     
     $scope.processResult = function (origin, destination) {
-      $scope.startTrip = true;
+      $scope.showResult = true;
       $scope.origin = origin;
       $scope.destination = destination;
     };

@@ -1,14 +1,23 @@
-<aside>
-  <statistics></statistics>
-</aside>
+<div id="choose-location">
+  <aside>
+    <statistics origin="origin" destination="origin"></statistics>
+  </aside>
 
-<div class="jumbotron">
-  <searcher process-result="processResult(origin, destination)"></searcher>
+  <div class="jumbotron">
+    <searcher process-result="processResult(origin, destination)"></searcher>
+  </div>
 </div>
 
-<div class="trip" ng-if="startTrip">
-  <pre>{{origin|json}}</pre>
-  <pre>{{destination|json}}</pre>
+<div id="search-result" ng-if="showResult">
+  <aside>
+    <statistics origin="origin" destination="destination"></statistics>
+  </aside>
+  
+  <div class="jumbotron">
+    <p>Good job/You could better</p>
+  </div>
 </div>
 
-<random-fact term="global warming"></random-fact>
+<div id="trip" ng-if="startTrip">
+  <random-fact term="global warming"></random-fact>
+</div>

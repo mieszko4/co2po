@@ -1,12 +1,14 @@
 <div id="choose-location">
   <aside>
-    <statistics origin="origin" destination="origin"></statistics>
+    <!--<statistics origin="origin" destination="origin"></statistics>-->
   </aside>
 
   <div class="jumbotron">
     <searcher process-result="processResult(origin, destination, vehicle)"></searcher>
   </div>
 </div>
+
+<trip distance="2000"></trip>
 
 <div id="search-result" ng-if="showResult">
   <aside>

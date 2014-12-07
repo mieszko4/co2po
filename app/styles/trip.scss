@@ -1,0 +1,17 @@
+.trip {
+  position: relative;
+  
+  .vehicle {
+    position: absolute;
+  }
+  
+  random-fact {
+    position: absolute;
+    display: none;
+  }
+  
+  canvas {
+    display: block;
+    margin: 0 auto;
+  }
+}

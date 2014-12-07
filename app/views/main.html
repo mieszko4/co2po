@@ -20,7 +20,7 @@
     <button ng-click="runTrip()" class="btn btn-primary">Show me the trip</button>
   </div>
   <div ng-if="minimumEmission.vehicle.type != chosenEmission.vehicle.type" class="jumbotron">
-    <p>{{minimumEmission.vehicle.name}} is the best option for environment</p>
+    <p>You choose {{chosenEmission.vehicle.type}} but {{minimumEmission.vehicle.name}} is the best option for environment</p>
     
     <button ng-click="runTrip()" class="btn btn-primary">Motivate me with the trip</button>
   </div>

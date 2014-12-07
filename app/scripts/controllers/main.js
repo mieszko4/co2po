@@ -10,10 +10,12 @@
 angular.module('co2poApp')
   .controller('MainCtrl', function ($scope) {
     $scope.startTrip = false;
-    $scope.emissions = [];
+    $scope.origin = undefined;
+    $scope.destination = undefined;
     
-    $scope.processResult = function (emissions) {
+    $scope.processResult = function (origin, destination) {
       $scope.startTrip = true;
-      $scope.emissions = emissions;
+      $scope.origin = origin;
+      $scope.destination = destination;
     };
   });

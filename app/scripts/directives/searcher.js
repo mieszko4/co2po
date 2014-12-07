@@ -7,7 +7,7 @@
  * # searcher
  */
 angular.module('co2poApp')
-  .directive('searcher', function (Vehicle, volvoCo2) {
+  .directive('searcher', function (Vehicle) {
     return {
       templateUrl: 'views/directives/searcher.html',
       scope: { processResult: '&' },
@@ -26,21 +26,17 @@ angular.module('co2poApp')
             return false;
           }
           
-          volvoCo2.getEmission({
+          scope.processResult({
+            origin: {
               lat: scope.searchForm.origin.geometry.location.lat(),
               lng: scope.searchForm.origin.geometry.location.lng()
             },
-            {
+            destination: {
               lat: scope.searchForm.destination.geometry.location.lat(),
               lng: scope.searchForm.destination.geometry.location.lng()
             }
-          ).then(function (emissions) {
-            scope.processResult({
-              emissions: emissions
-            });
           });
         };
-        
       }
     };
   });

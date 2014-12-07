@@ -17,6 +17,12 @@
     }
   }
   
+  .distance {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+  
   random-fact {
     position: absolute;
     display: none;

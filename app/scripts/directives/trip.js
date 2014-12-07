@@ -16,12 +16,11 @@ angular.module('co2poApp')
       scope: { distance: '@', vehicleType: '@', lineColor: '@' },
       templateUrl: 'views/directives/trip.html',
       restrict: 'E',
-      link: function (scope, element, attrs) {
+      link: function (scope, element) {
         //get height
         var iterations = Math.floor(scope.distance / 100);
         iterations = (iterations < 20) ? iterations : 20;
         scope.height = (2 + iterations) * inc;
-        
         
         element.height(scope.height);
         var canvas = angular.element('<canvas id="trip-canvas" />')[0];
@@ -39,7 +38,6 @@ angular.module('co2poApp')
           context.beginPath();
           
           //first
-          var offset = 0;
           var x0 = width/2, y0 = 0;
           var x1 = width/2 + Math.random() * width/2, y1 = inc/2;
           var x2 = width/2 - Math.random() * width/2, y2 = inc/2+10;
@@ -84,7 +82,7 @@ angular.module('co2poApp')
           context.bezierCurveTo(x1, y1, x2, y2, x3, y3);
           updateXmap(x0, y0, x1, y1, x2, y2, x3, y3);
           context.stroke();
-        }
+        };
         
         var updateXmap  = function (x0, y0, x1, y1, x2, y2, x3, y3) {
           for (var t = 0; t <= 1; t += inc / 100000) {
@@ -93,42 +91,50 @@ angular.module('co2poApp')
             
             xMap[Math.round(y)] = x;
           }
-        }
+        };
         
         drawPath(context);
         
         //animate
+        scope.currentDistance = undefined;
+        scope.y = undefined;
         var $windowElement = angular.element($window);
         var $vehicle = element.find('.vehicle');
+        var $distance = element.find('.distance');
         var applyAnimation = function () {
           var st = $windowElement.scrollTop();
           var windowHeight = $windowElement.height();
           var breakingUp = windowHeight - element.offset().top;
           breakingUp -= Math.floor(windowHeight/4);
           
-          var y;
           if (breakingUp + st <= 0) {
-            y = 0;
+            scope.y = 0;
+            $distance.hide();
           } else if (breakingUp + st < scope.height) {
-            y = breakingUp + st;
+            scope.y = breakingUp + st;
+            $distance.show();
           } else {
-            y = scope.height;
+            scope.y = scope.height;
+            $distance.hide();
           }
           
           var x;
-          if (y === 0 || y === scope.height) {
+          if (scope.y === 0 || scope.y === scope.height) {
             x = width / 2;
-          } else if (typeof xMap[y] !== 'undefined') {
-            x = xMap[y];
+          } else if (typeof xMap[scope.y] !== 'undefined') {
+            x = xMap[scope.y];
           }
           
           if (typeof x !== 'undefined') {
-            $vehicle.css({top: y - $vehicle.outerHeight(true) / 2, left: x - $vehicle.outerWidth(true) / 2});
+            $vehicle.css({top: scope.y - $vehicle.outerHeight(true) / 2, left: x - $vehicle.outerWidth(true) / 2});
           }
         };
         
         $windowElement.on('scroll', function () {
           applyAnimation();
+          scope.$apply(function () {
+            scope.currentDistance = Math.round(scope.y/scope.height * scope.distance);
+          });
         });
         applyAnimation();
       },

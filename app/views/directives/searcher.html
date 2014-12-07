@@ -1,24 +1,27 @@
+<h2>What's your travel plan?</h2>
 <form ng-submit="search(searchForm)" class="form-horizontal" action="" method="POST">
-  <fieldset>
-    <div class="control-group">
-      <input g-places-autocomplete ng-model="searchForm.origin" type="text" id="origin" name="origin" placeholder="Origin" required>
-    </div>
-
-    <div class="control-group">
-      <input g-places-autocomplete ng-model="searchForm.destination" type="text" id="destination" name="destination" placeholder="Destination" required>
-    </div>
-    
-    <div class="control-group">
-        <div ng-repeat="vehicle in vehicles" ng-class="{{vehicle.type}}">
-            <label for="vehicle-{{vehicle.type}}">{{vehicle.name}}</label>
-            <input id="vehicle-{{vehicle.type}}" ng-model="searchForm.vehicle" name="vehicle" type="radio" value="{{vehicle.type}}" />
+    <fieldset>
+        <p>Choose origin and destination:</p>
+        <div class="control-group location">
+            <input g-places-autocomplete ng-model="searchForm.origin" type="text" id="origin" name="origin" placeholder="Origin" required>
         </div>
-    </div>
 
-    <div class="control-group">
-      <div class="controls">
-        <button type="submit" class="btn btn-primary">Search</button>
-      </div>
-    </div>
-  </fieldset>
+        <div class="control-group location">
+            <input g-places-autocomplete ng-model="searchForm.destination" type="text" id="destination" name="destination" placeholder="Destination" required>
+        </div>
+
+        <p>Great! Now choose your transportation type:</p>
+        <div class="control-group">
+            <div ng-repeat="vehicle in vehicles" class="vehicle" ng-class="vehicle.type">
+                <input id="vehicle-{{vehicle.type}}" ng-model="searchForm.vehicle" name="vehicle" type="radio" value="{{vehicle.type}}" />
+                <label for="vehicle-{{vehicle.type}}">{{vehicle.name}}</label>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="search-btn"></button>
+            </div>
+        </div>
+    </fieldset>
 </form>

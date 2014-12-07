@@ -1,3 +1,133 @@
-﻿.car{
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAARCAYAAABASYU2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAZNJREFUeNrMloFtgzAQRQFlALIBHaASGyRs0EzQdIImEySZIGWCthM0GwATFKkDhG5AJ2jvo2/pajmFIGhy0peDwfHz2Xdn3zvDvle3oTRL0Uw0F4UtQ3JRJXr1nz5yr6f5HeEiaTYEhJWimpCx6AAQ9mnDu0d+lwhoOQqkAG4JCI/sACST1XwHb2YEyP/wfsbHxIw9xyYtW5vRG2XfCTBG/iuRn0fRXvQwCKQFCNu1AIaO8bH1DRa65NGx+79wfk/tht8B8L8N5zvVwC7I9wsC2plhgR0MLMD9lQB6THFvvzypIvXaLNeB83xhmIp5FoqoxqMTevBedeoIi9SgcETAUhUGY6ZYNCkos1YTO4BqPWiEANGe02kNPGHAVbhy3oEyfeWI2xypOaeiF7WTKSBTtSKTsCsJfYT/QvUVjto8hH1qYBaNQnvat1IQQv7OVBm2G7ZrenQ2IGBBrx2t7Z+r56kNeSoNYXU3fWp3x1sW8vPK8QrleBtYl4Emy/Oc6JUlYwFy3jUvHubImWqDG5j3I8AAU6+U9dxVLRsAAAAASUVORK5CYII=') /*../images/vozila_ikone/auto_3.png*/;
+﻿.vehicle{
+    display: inline-block;
+    padding: 5px 8px;
+
+    input{
+        display:none;
+    }
+
+    label{
+        display:block;
+        width:50px;
+        height: 50px;
+        text-indent:-9999px;
+        cursor:pointer;
+        background-position:0px; 
+    }
+
+    &.car {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/auto_1.png');            
+
+            &:hover{
+                background-image: url('../images/vozila_ikone/auto_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/auto_3.png');
+        }
+    }
+
+    &.bus {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/autobus_1.png');
+
+
+            &:hover{
+                background-image: url('../images/vozila_ikone/autobus_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/autobus_3.png');
+        }
+    }
+
+    &.train-tram-subway {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/vlak_1.png');
+
+            &:hover{
+                background-image: url('../images/vozila_ikone/vlak_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/vlak_3.png');
+        }
+    }
+
+    &.motorcycle {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/moto_1.png');
+            background-position-y:11px;
+
+            &:hover{
+                background-image: url('../images/vozila_ikone/moto_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/moto_3.png');
+        }
+    }
+
+    &.airplane {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/avion_1.png');
+
+            &:hover{
+                background-image: url('../images/vozila_ikone/avion_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/avion_3.png');
+        }
+    }
+
+    &.ferry {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/brod_1.png');
+            background-position-y:11px;
+
+            &:hover{
+                background-image: url('../images/vozila_ikone/brod_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/brod_3.png');
+        }
+    }
+}
+
+.search-btn{
+    background:url("../images/greenr_okgo-gumb-pasivan.png") no-repeat;
+    cursor:pointer;
+    border: none;
+    width:200px;
+    height:50px;
+
+    &:hover{
+        background-image: url("../images/greenr_okgo-gumb-aktivan.png");
+    }
+}
+
+searcher {
+    form{
+        padding:20px;
+    }
+    p{
+        font-size:20px;
+    }
+}
+
+.location{
+    margin-bottom:25px;
+    display:inline-block;
+    input{
+        padding:5px;
+    }
 }

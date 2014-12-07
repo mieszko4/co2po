@@ -8,7 +8,7 @@
  * Controller of the co2poApp
  */
 angular.module('co2poApp')
-  .controller('MainCtrl', function ($scope, Vehicle) {
+  .controller('MainCtrl', function ($scope, $anchorScroll, $location, Vehicle) {
     $scope.showResult = false;
     $scope.origin = undefined;
     $scope.destination = undefined;
@@ -16,6 +16,9 @@ angular.module('co2poApp')
     
     $scope.processResult = function (origin, destination, vehicle) {
       $scope.showResult = true;
+      $location.hash('search-result');
+      $anchorScroll();
+      
       $scope.origin = origin;
       $scope.destination = destination;
       $scope.vehicle = vehicle;
@@ -32,6 +35,9 @@ angular.module('co2poApp')
     $scope.startTrip = false;
     $scope.runTrip = function () {
       $scope.startTrip = true;
+      $location.hash('trip');
+      $anchorScroll();
+      
       console.log('and the fun begins');
     };
   });

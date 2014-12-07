@@ -1,43 +1,43 @@
-<div id="choose-location">
-  <aside>
-    <statistics origin="origin" destination="origin"></statistics>
-  </aside>
+<div id="choose-location" class="row">
+    <aside class="statistic col-md-3">
+        <statistics origin="origin" destination="origin"></statistics>
+    </aside>
 
-  <div class="jumbotron">
-    <searcher process-result="processResult(origin, destination, vehicle)"></searcher>
-  </div>
+    <div class="motivation col-md-6">
+        <searcher process-result="processResult(origin, destination, vehicle)"></searcher>
+    </div>
 </div>
 
 <div id="search-result" ng-if="showResult">
-  <aside>
-    <statistics origin="origin" destination="destination" process-co2s="processCo2s(co2s)"></statistics>
-  </aside>
-  
-  <div ng-if="minimumEmission.vehicle.type == chosenEmission.vehicle.type" class="jumbotron">
-    <p>Good job!</p>
-    <p>{{minimumEmission.vehicle.name}} is the best option for environment.</p>
-    
-    <button ng-click="runTrip()" class="btn btn-primary">Show me the trip</button>
-  </div>
-  <div ng-if="minimumEmission.vehicle.type != chosenEmission.vehicle.type" class="jumbotron">
-    <p>You chose {{chosenEmission.vehicle.type}} but {{minimumEmission.vehicle.name}} is the best option for environment</p>
-    
-    <button ng-click="runTrip()" class="btn btn-primary">Motivate me with the trip</button>
-  </div>
+    <aside>
+        <statistics origin="origin" destination="destination" process-co2s="processCo2s(co2s)"></statistics>
+    </aside>
+
+    <div ng-if="minimumEmission.vehicle.type == chosenEmission.vehicle.type" class="jumbotron">
+        <p>Good job!</p>
+        <p>{{minimumEmission.vehicle.name}} is the best option for environment.</p>
+
+        <button ng-click="runTrip()" class="btn btn-primary">Show me the trip</button>
+    </div>
+    <div ng-if="minimumEmission.vehicle.type != chosenEmission.vehicle.type" class="jumbotron">
+        <p>You chose {{chosenEmission.vehicle.type}} but {{minimumEmission.vehicle.name}} is the best option for environment</p>
+
+        <button ng-click="runTrip()" class="btn btn-primary">Motivate me with the trip</button>
+    </div>
 </div>
 
 <div id="trip" ng-if="startTrip">
-  <random-fact term="global warming"></random-fact>
+    <random-fact term="global warming"></random-fact>
 </div>
 
 <div id="trip-summary" ng-if="startTrip">
-  <div class="jumbotron">
-    <div ng-if="minimumEmission.vehicle.type != chosenEmission.vehicle.type">
-      <p>Did you change your mind?</p>
-      <button ng-click="yes()" class="btn btn-primary">Yes</button>
-      <button ng-click="not()" class="btn btn-default">No</button>
+    <div class="jumbotron">
+        <div ng-if="minimumEmission.vehicle.type != chosenEmission.vehicle.type">
+            <p>Did you change your mind?</p>
+            <button ng-click="yes()" class="btn btn-primary">Yes</button>
+            <button ng-click="not()" class="btn btn-default">No</button>
+        </div>
+
+        <p><a target="_about" href="https://twitter.com/intent/tweet?text=">Tweet about this</a></p>
     </div>
-    
-    <p><a target="_about" href="https://twitter.com/intent/tweet?text=">Tweet about this</a></p>
-  </div>
 </div>

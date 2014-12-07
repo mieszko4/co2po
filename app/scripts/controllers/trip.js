@@ -9,13 +9,14 @@
  */
 angular.module('co2poApp')
   .controller('TripCtrl', function ($scope) {
-      $scope.$on('rockAndRoll', function (e, direction) {
+      $scope.$on('rockAndRoll', function (e, direction, y) {
+          $scope.offset = function () {
+              return y + 'px';
+          }
+          console.log('la tortura', direction, y);
+      });
 
-          console.log('la tortura');
-      })
+      $scope.fireAnimation = function (direction, y) {
+          $scope.$emit('rockAndRoll', direction, y);
+      };
   })
-.controller('sliderController', function ($scope) {
-    $scope.fireAnimation = function (direction) {
-        $scope.$emit('rockAndRoll', direction);
-    }
-});

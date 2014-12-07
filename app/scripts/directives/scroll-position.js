@@ -9,7 +9,6 @@
 angular.module('co2poApp')
 .directive('scrollPosition', ['$window', '$timeout', '$parse', function($window, $timeout, $parse) {
     return function(scope, element, attrs) {
-
         var windowEl = angular.element($window)[0];
         var directionMap = {
             'up': 1,
@@ -27,7 +26,7 @@ angular.module('co2poApp')
         windowEl._elementsList.push({element: scope.element, scope: scope, attrs: attrs});
 
         var element, index, model, scrollAnimationFunction, tmpYOffset = 0, tmpXOffset = 0;
-        var userViewportOffset = 200;
+        var userViewportOffset = 0;
 
         function triggerScrollFunctions() {
 
@@ -37,17 +36,17 @@ angular.module('co2poApp')
                     directionY = tmpYOffset - windowEl.pageYOffset > 0 ? 'up' : 'down';
                     directionX = tmpXOffset - windowEl.pageXOffset > 0 ? 'left' : 'right';
                     tmpXOffset = windowEl.pageXOffset;  
-                    tmpYOffset = windowEl.pageYOffset;  
-                    if(element.offsetTop - userViewportOffset < windowEl.pageYOffset && element.offsetHeight > (windowEl.pageYOffset - element.offsetTop)) {
+                    tmpYOffset = windowEl.pageYOffset;
+                    //if(element.offsetTop - userViewportOffset < windowEl.pageYOffset && element.offsetHeight > (windowEl.pageYOffset - element.offsetTop)) {
                         model = $parse(windowEl._elementsList[i].attrs.scrollAnimation);
                         scrollAnimationFunction = model(windowEl._elementsList[i].scope);
                         windowEl._elementsList[i].scope.$apply(function () {
-                            element.firedAnimation = scrollAnimationFunction(directionMap[directionX]);
+                            element.firedAnimation = scrollAnimationFunction(directionMap[directionX], windowEl.pageYOffset);
                         });
                         if(element.firedAnimation) {
                             windowEl._elementsList.splice(i, 1);
                         }
-                    }
+                    //}
                 } else {
                     index = windowEl._elementsList.indexOf(element); //TODO: Add indexOf polyfill for IE9 
                     if (index > 0) {

@@ -1,6 +1,10 @@
 ﻿a {
   color: #FFF; }
 
+.trip-body {
+  z-index: 0;
+  position: absolute; }
+
 .classname {
   border: solid 1px #2d2d2d;
   text-align: center;
@@ -14,6 +18,148 @@
   -webkit-animation: cssAnimation 3.0227s 14 ease;
   -moz-animation: cssAnimation 3.0227s 14 ease;
   -o-animation: cssAnimation 3.0227s 14 ease; }
+
+#infoCO2 {
+  width: 100px;
+  height: 100px;
+  z-index: 100;
+  background: #8c55a9; }
+
+#linksCO2 {
+  width: 100px;
+  height: 100px;
+  z-index: 100;
+  background: #b6ff00; }
+
+#factsCO2 {
+  width: 100px;
+  height: 100px;
+  z-index: 100;
+  background: #ff006e; }
+
+.anime {
+  float: left; }
+
+.animated {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear; }
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px); }
+
+  80% {
+    -webkit-transform: translateX(10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(-30px); }
+
+  80% {
+    transform: translateX(10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight; }
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05); }
+
+  70% {
+    -webkit-transform: scale(0.9); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05); }
+
+  70% {
+    transform: scale(0.9); }
+
+  100% {
+    transform: scale(1); } }
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn; }
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px); }
+
+  80% {
+    -webkit-transform: translateX(-10px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateX(30px); }
+
+  80% {
+    transform: translateX(-10px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft; }
+
+#circle {
+  float: right;
+  z-index: 1000;
+  width: 100px;
+  height: 100px;
+  background: red;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  position: relative; }
 
 @-webkit-keyframes cssAnimation {
   from {

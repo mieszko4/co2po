@@ -1,7 +1,12 @@
-<div ng-controller="TripCtrl"></div>
-<div ng-controller="sliderController" scroll-position scroll-animation="fireAnimation">
-    <div class="trip-body">
+<div scroll-position scroll-animation="fireAnimation">
+    <div class="trip-body" id="tripID">
         <img src="../images/line.png" />
     </div>
-    <div class="classname"><a href="http://www.css3maker.com">www.css3maker.com</a></div>
+    <div class="anime">
+        <div id="infoCO2" class="animated bounceInLeft">La tortura</div>
+        <div id="linksCO2" class="animated bounceIn">Rihanna</div>
+        <div id="factsCO2" class="animated bounceInRight">Drunk in love!</div>
+        <div ng-style="{top: offset()}" id="circle"></div>
+    </div>
+    <!--<div class="classname"><a href="http://www.css3maker.com">www.css3maker.com</a></div>-->
 </div>

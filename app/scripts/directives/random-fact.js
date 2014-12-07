@@ -13,7 +13,9 @@ angular.module('co2poApp')
       templateUrl: 'views/directives/random-fact.html',
       restrict: 'E',
       link: function (scope) {
-        scope.fact = randomFact.getFact(scope.term);
+        randomFact.getFact(scope.term).then(function(fact) {
+            scope.fact =fact;
+        });
       }
     };
   });

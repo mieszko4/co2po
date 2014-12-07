@@ -7,10 +7,17 @@
  * # trip
  */
 angular.module('co2poApp')
-  .directive('trip', function ($window) {
+  .directive('trip', function ($window, $compile) {
     var width = 300;
     var inc = 200;
     var xMap = {};
+    var keywords = [
+      'global warming',
+      'carbon dioxide',
+      'ocean acidification',
+      'glacial retreat',
+      'climate change'
+    ];
     
     return {
       scope: { distance: '@', vehicleType: '@', lineColor: '@' },
@@ -20,6 +27,7 @@ angular.module('co2poApp')
         //get height
         var iterations = Math.floor(scope.distance / 100);
         iterations = (iterations < 20) ? iterations : 20;
+        iterations = (iterations > 2) ? iterations : 2;
         scope.height = (2 + iterations) * inc;
         
         element.height(scope.height);
@@ -64,6 +72,20 @@ angular.module('co2poApp')
             context.bezierCurveTo(x1, y1, x2, y2, x3, y3);
             updateXmap(x0, y0, x1, y1, x2, y2, x3, y3);
             context.stroke();
+            
+            //add random-fact
+            var randomIndex = Math.ceil(Math.random() * keywords.length);
+            var $randomFact = $compile('<random-fact trigger-on="'+y3+'" term="' + keywords[randomIndex] + '"></random-fact>')(scope);
+            $randomFact.css({ top: y0 });
+            
+            //alertnate left/right
+            if (i % 2 === 0) {
+              $randomFact.css({ left: 0 });
+            } else {
+              $randomFact.css({ right: 0 });
+            }
+            
+            element.append($randomFact);
           }
           
           //last

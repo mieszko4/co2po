@@ -26,11 +26,11 @@
   </div>
 </div>
 
+<a id="start-trip"></a>
 <div id="trip" ng-if="startTrip">
   <trip distance="{{distance}}" vehicle-type="{{chosenEmission.vehicle.type}}" line-color="#428bca"></trip>
 </div>
 
-<a id="start-trip"></a>
 <div id="trip-summary" ng-if="startTrip">
   <div class="jumbotron">
     <div ng-if="minimumEmission.vehicle.type != chosenEmission.vehicle.type">

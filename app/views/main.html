@@ -29,3 +29,15 @@
 <div id="trip" ng-if="startTrip">
   <random-fact term="global warming"></random-fact>
 </div>
+
+<div id="trip-summary" ng-if="startTrip">
+  <div class="jumbotron">
+    <div ng-if="minimumEmission.vehicle.type != chosenEmission.vehicle.type">
+      <p>Did you change your mind?</p>
+      <button ng-click="yes()" class="btn btn-primary">Yes</button>
+      <button ng-click="not()" class="btn btn-default">No</button>
+    </div>
+    
+    <p><a target="_about" href="https://twitter.com/intent/tweet?text=">Tweet about this</a></p>
+  </div>
+</div>

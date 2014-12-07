@@ -8,12 +8,12 @@
  */
 angular.module('co2poApp')
   .directive('trip', function ($window) {
-    var width = 300; //hardcoded width
+    var width = 300;
     var inc = 200;
     var xMap = {};
     
     return {
-      scope: { distance: '@', vehicleType: '@' },
+      scope: { distance: '@', vehicleType: '@', lineColor: '@' },
       templateUrl: 'views/directives/trip.html',
       restrict: 'E',
       link: function (scope, element, attrs) {
@@ -33,9 +33,9 @@ angular.module('co2poApp')
         var context = canvas.getContext('2d');
         
         context.lineWidth = 10;
-        context.strokeStyle = "red";
+        context.strokeStyle = scope.lineColor;
         
-        function drawPath (context) {
+        var drawPath = function (context) {
           context.beginPath();
           
           //first
@@ -50,10 +50,7 @@ angular.module('co2poApp')
           updateXmap(x0, y0, x1, y1, x2, y2, x3, y3);
           context.stroke();
           
-          var colors = ['blue', 'red'];
           for (var i = 0; i < iterations; i++) {
-            context.strokeStyle = colors[i%2];
-            
             context.beginPath();
             x0 = x3;
             y0 = y3;
@@ -72,7 +69,6 @@ angular.module('co2poApp')
           }
           
           //last
-          context.strokeStyle = "blue";
           context.beginPath();
           x0 = x3;
           y0 = y3;
@@ -90,8 +86,8 @@ angular.module('co2poApp')
           context.stroke();
         }
         
-        function updateXmap (x0,y0, x1, y1, x2, y2, x3, y3) {
-          for (var t=0; t<=1; t+=inc/100000) {
+        var updateXmap  = function (x0, y0, x1, y1, x2, y2, x3, y3) {
+          for (var t = 0; t <= 1; t += inc / 100000) {
             var x =  Math.pow((1-t), 3) * x0 + 3*Math.pow((1-t), 2) * t * x1 + 3*(1-t) * Math.pow(t, 2) * x2 + Math.pow(t,3) * x3;
             var y =  Math.pow((1-t), 3) * y0 + 3*Math.pow((1-t), 2) * t * y1 + 3*(1-t) * Math.pow(t, 2) * y2 + Math.pow(t,3) * y3;
             
@@ -104,7 +100,7 @@ angular.module('co2poApp')
         //animate
         var $windowElement = angular.element($window);
         var $vehicle = element.find('.vehicle');
-        $windowElement.on('scroll', function () {
+        var applyAnimation = function () {
           var st = $windowElement.scrollTop();
           var breakingUp = $windowElement.height() - element.offset().top;
           
@@ -127,8 +123,12 @@ angular.module('co2poApp')
           if (typeof x !== 'undefined') {
             $vehicle.css({top: y - $vehicle.outerHeight(true) / 2, left: x - $vehicle.outerWidth(true) / 2});
           }
-        });
+        };
         
+        $windowElement.on('scroll', function () {
+          applyAnimation();
+        });
+        applyAnimation();
       },
       replace: true
     };

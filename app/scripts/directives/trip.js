@@ -7,13 +7,13 @@
  * # trip
  */
 angular.module('co2poApp')
-  .directive('trip', function () {
-    var width = 200; //hardcoded width
+  .directive('trip', function ($window) {
+    var width = 300; //hardcoded width
     var inc = 200;
     var xMap = {};
     
     return {
-      scope: { distance: '@' },
+      scope: { distance: '@', vehicleType: '@' },
       templateUrl: 'views/directives/trip.html',
       restrict: 'E',
       link: function (scope, element, attrs) {
@@ -25,7 +25,7 @@ angular.module('co2poApp')
         
         element.height(scope.height);
         var canvas = angular.element('<canvas id="trip-canvas" />')[0];
-        element.append(canvas);
+        element.find('.trip-path-wrapper').append(canvas);
         
         canvas.height = scope.height;
         
@@ -35,7 +35,7 @@ angular.module('co2poApp')
         context.lineWidth = 10;
         context.strokeStyle = "red";
         
-        function drawSpring (context) {
+        function drawPath (context) {
           context.beginPath();
           
           //first
@@ -88,8 +88,6 @@ angular.module('co2poApp')
           context.bezierCurveTo(x1, y1, x2, y2, x3, y3);
           updateXmap(x0, y0, x1, y1, x2, y2, x3, y3);
           context.stroke();
-          
-          console.log(xMap);
         }
         
         function updateXmap (x0,y0, x1, y1, x2, y2, x3, y3) {
@@ -101,9 +99,35 @@ angular.module('co2poApp')
           }
         }
         
+        drawPath(context);
         
-        drawSpring(context);
-        
+        //animate
+        var $windowElement = angular.element($window);
+        var $vehicle = element.find('.vehicle');
+        $windowElement.on('scroll', function () {
+          var st = $windowElement.scrollTop();
+          var breakingUp = $windowElement.height() - element.offset().top;
+          
+          var y;
+          if (breakingUp + st <= 0) {
+            y = 0;
+          } else if (breakingUp + st < scope.height) {
+            y = breakingUp + st;
+          } else {
+            y = scope.height;
+          }
+          
+          var x;
+          if (y === 0 || y === scope.height) {
+            x = width / 2;
+          } else if (typeof xMap[y] !== 'undefined') {
+            x = xMap[y];
+          }
+          
+          if (typeof x !== 'undefined') {
+            $vehicle.css({top: y - $vehicle.outerHeight(true) / 2, left: x - $vehicle.outerWidth(true) / 2});
+          }
+        });
         
       },
       replace: true

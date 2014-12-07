@@ -1,17 +1,24 @@
 .trip {
-  position: relative;
-  
-  .vehicle {
-    position: absolute;
+  .trip-path {
+    margin: 0 auto;
+    width: 300px;
+    position: relative;
+    
+    .vehicle {
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 50px;
+      background: blue;
+    }
+    
+    canvas {
+      display: block;
+    }
   }
   
   random-fact {
     position: absolute;
     display: none;
-  }
-  
-  canvas {
-    display: block;
-    margin: 0 auto;
   }
 }

@@ -9,7 +9,7 @@
     </div>
     
     <div class="control-group">
-        <div ng-repeat="vehicle in vehicles" ng-class="{{vehicle.type}}">
+        <div ng-repeat="vehicle in vehicles" class="vehicle" ng-class="vehicle.type">
             <label for="vehicle-{{vehicle.type}}">{{vehicle.name}}</label>
             <input id="vehicle-{{vehicle.type}}" ng-model="searchForm.vehicle" name="vehicle" type="radio" value="{{vehicle.type}}" />
         </div>

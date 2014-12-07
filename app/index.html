@@ -1,6 +1,6 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -15,38 +15,40 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
-  <body ng-app="co2poApp">
+</head>
+<body ng-app="co2poApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-        </ul>
-        <h3 class="text-muted">co2po</h3>
-      </div>
+        <div class="header row">
+            <a class="col-xs-3" href="/"><img src="./images/greenr_logo-header.png" alt="" /></a>
+            <p class="slogan col-xs-7">Get motivated and reduce<br /> your carbon emission <br />while traveling!</p>
+            <div class="share coll-xs-2"><img src="./images/social/greenr_facebook-gumb--pasivan.png" alt="" /><img class="twitter" src="./images/social/greenr_twitter-gumb--pasivan.png" alt="" /></div>
+        </div>
 
-      <div ng-view=""></div>
+        <div ng-view=""></div>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Croders team</p>
-      </div>
+        <div class="footer row">
+            <div class="col-xs-12">
+                <p><span class="glyphicon glyphicon-heart"></span> from the Croders team</p>
+            </div>
+        </div>
     </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
     </script>
     <script src="//maps.googleapis.com/maps/api/js?libraries=places"></script>
 
@@ -54,7 +56,6 @@
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>

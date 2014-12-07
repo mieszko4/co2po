@@ -22,11 +22,19 @@ angular.module('co2poApp')
         };
         
         scope.search = function () {
-          if (typeof scope.searchForm.origin.geometry === 'undefined' || typeof scope.searchForm.destination.geometry === 'undefined') {
+          if (typeof scope.searchForm.origin.geometry === 'undefined' || typeof scope.searchForm.destination.geometry === 'undefined' || typeof scope.searchForm.vehicle === 'undefined') {
             return false;
           }
           
-          volvoCo2.getEmission(scope.searchForm.origin, scope.searchForm.destination).then(function (emissions) {
+          volvoCo2.getEmission({
+              lat: scope.searchForm.origin.geometry.location.lat(),
+              lng: scope.searchForm.origin.geometry.location.lng()
+            },
+            {
+              lat: scope.searchForm.destination.geometry.location.lat(),
+              lng: scope.searchForm.destination.geometry.location.lng()
+            }
+          ).then(function (emissions) {
             scope.processResult({
               emissions: emissions
             });

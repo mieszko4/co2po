@@ -25,10 +25,10 @@ angular.module('co2poApp')
         });
         
         return emision.get({
-          startLat: origin.geometry.location.lat(),
-          startLng: origin.geometry.location.lng(),
-          endLat: destination.geometry.location.lat(),
-          endLng: destination.geometry.location.lng()
+          startLat: origin.lat,
+          startLng: origin.lng,
+          endLat: destination.lat,
+          endLng: destination.lng
         }).$promise.then(function (result) {
           return result.emissions;
         });

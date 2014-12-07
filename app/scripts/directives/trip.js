@@ -102,7 +102,9 @@ angular.module('co2poApp')
         var $vehicle = element.find('.vehicle');
         var applyAnimation = function () {
           var st = $windowElement.scrollTop();
-          var breakingUp = $windowElement.height() - element.offset().top;
+          var windowHeight = $windowElement.height();
+          var breakingUp = windowHeight - element.offset().top;
+          breakingUp -= Math.floor(windowHeight/4);
           
           var y;
           if (breakingUp + st <= 0) {

@@ -4,17 +4,25 @@
   </aside>
 
   <div class="jumbotron">
-    <searcher process-result="processResult(origin, destination)"></searcher>
+    <searcher process-result="processResult(origin, destination, vehicle)"></searcher>
   </div>
 </div>
 
 <div id="search-result" ng-if="showResult">
   <aside>
-    <statistics origin="origin" destination="destination"></statistics>
+    <statistics origin="origin" destination="destination" process-co2s="processCo2s(co2s)"></statistics>
   </aside>
   
-  <div class="jumbotron">
-    <p>Good job/You could better</p>
+  <div ng-if="minimumEmission.vehicle.type == chosenEmission.vehicle.type" class="jumbotron">
+    <p>Good job!</p>
+    <p>{{minimumEmission.vehicle.name}} is the best option for environment.</p>
+    
+    <button ng-click="runTrip()" class="btn btn-primary">Show me the trip</button>
+  </div>
+  <div ng-if="minimumEmission.vehicle.type != chosenEmission.vehicle.type" class="jumbotron">
+    <p>{{minimumEmission.vehicle.name}} is the best option for environment</p>
+    
+    <button ng-click="runTrip()" class="btn btn-primary">Motivate me with the trip</button>
   </div>
 </div>
 

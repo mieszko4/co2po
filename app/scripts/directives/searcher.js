@@ -34,7 +34,8 @@ angular.module('co2poApp')
             destination: {
               lat: scope.searchForm.destination.geometry.location.lat(),
               lng: scope.searchForm.destination.geometry.location.lng()
-            }
+            },
+            vehicle: scope.searchForm.vehicle
           });
         };
       }

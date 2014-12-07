@@ -9,7 +9,7 @@
 angular.module('co2poApp')
   .directive('statistics', function (Vehicle) {
     return {
-      scope: { origin: '=', destination: '=' },
+      scope: { origin: '=', destination: '=', processCo2s: '&' },
       templateUrl: 'views/directives/statistics.html',
       restrict: 'E',
       link: function (scope) {
@@ -39,6 +39,8 @@ angular.module('co2poApp')
               scope.distance = Math.round(co2.distance / 1000);
             }
           });
+          
+          scope.processCo2s({ co2s: co2s });
         });
       }
     };

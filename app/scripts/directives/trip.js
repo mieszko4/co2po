@@ -75,14 +75,14 @@ angular.module('co2poApp')
             
             //add random-fact
             var randomIndex = Math.ceil(Math.random() * keywords.length);
-            var $randomFact = $compile('<random-fact trigger-on="'+y3+'" term="' + keywords[randomIndex] + '"></random-fact>')(scope);
+            var $randomFact = $compile('<random-fact class="not-active" trigger-on-scroll="true" term="' + keywords[randomIndex] + '"></random-fact>')(scope);
             $randomFact.css({ top: y0 });
             
             //alertnate left/right
             if (i % 2 === 0) {
-              $randomFact.css({ left: 0 });
+              $randomFact.addClass('left');
             } else {
-              $randomFact.css({ right: 0 });
+              $randomFact.addClass('right');
             }
             
             element.append($randomFact);

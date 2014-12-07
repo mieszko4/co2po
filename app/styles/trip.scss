@@ -26,9 +26,25 @@
   
   random-fact {
     position: absolute;
-    display: none;
     width: 200px;
     padding: 10px 20px;
     background: rgba(255, 255, 255, 0.7);
+    
+    opacity: 1;
+    transition: opacity 1s;
+    
+    &.not-active {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    
+    &.left {
+      left: 0;
+    }
+    
+    &.right {
+      right: 0;
+    }
   }
 }

@@ -31,9 +31,9 @@ angular.module('co2poApp')
     };
     
     $scope.startTrip = false;
+    $scope.distance = undefined;
     $scope.runTrip = function () {
       $scope.startTrip = true;
-      
-      console.log('and the fun begins');
+      $scope.distance = $scope.chosenEmission.distance / 1000;
     };
   });

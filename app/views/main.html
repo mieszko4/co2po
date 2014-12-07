@@ -1,14 +1,12 @@
 <div id="choose-location">
   <aside>
-    <!--<statistics origin="origin" destination="origin"></statistics>-->
+    <statistics origin="origin" destination="origin"></statistics>
   </aside>
 
   <div class="jumbotron">
     <searcher process-result="processResult(origin, destination, vehicle)"></searcher>
   </div>
 </div>
-
-<trip distance="2000" vehicle-type="CAR" line-color="#428bca"></trip>
 
 <div id="search-result" ng-if="showResult">
   <aside>
@@ -29,7 +27,7 @@
 </div>
 
 <div id="trip" ng-if="startTrip">
-  <random-fact term="global warming"></random-fact>
+  <trip distance="{{distance}}" vehicle-type="{{chosenEmission.vehicle.type}}" line-color="#428bca"></trip>
 </div>
 
 <div id="trip-summary" ng-if="startTrip">

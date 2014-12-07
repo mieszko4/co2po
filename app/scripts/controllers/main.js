@@ -28,6 +28,11 @@ angular.module('co2poApp')
     $scope.processCo2s = function (co2s) {
       $scope.minimumEmission = Vehicle.getMinimumCo2(co2s);
       $scope.chosenEmission = Vehicle.getChosenCo2(co2s, $scope.vehicle);
+      
+      //TODO: move to directive
+      angular.element('html, body').animate({
+        scrollTop: angular.element('#search-result').offset().top
+      }, 1000);
     };
     
     $scope.startTrip = false;
@@ -35,5 +40,10 @@ angular.module('co2poApp')
     $scope.runTrip = function () {
       $scope.startTrip = true;
       $scope.distance = $scope.chosenEmission.distance / 1000;
+      
+      //TODO: move to directive
+      angular.element('html, body').animate({
+        scrollTop: angular.element('#start-trip').offset().top
+      }, 2000);
     };
   });

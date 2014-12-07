@@ -1,6 +1,6 @@
 ﻿.vehicle{
     display: inline-block;
-    background-repeat:no-repeat;
+    padding: 5px 8px;
 
     input{
         display:none;
@@ -12,78 +12,93 @@
         height: 50px;
         text-indent:-9999px;
         cursor:pointer;
+        background-position:0px; 
     }
 
+    &.car {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/auto_1.png');            
 
-    &.car{
-        background-image: url('../images/vozila_ikone/auto_1.png');
+            &:hover{
+                background-image: url('../images/vozila_ikone/auto_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/auto_3.png');
+        }
     }
 
-    &.car:hover{
-        background-image: url('../images/vozila_ikone/auto_2.png');
+    &.bus {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/autobus_1.png');
+
+
+            &:hover{
+                background-image: url('../images/vozila_ikone/autobus_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/autobus_3.png');
+        }
     }
 
-    &.car:active{
-        background-image: url('../images/vozila_ikone/auto_3.png');
+    &.train-tram-subway {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/vlak_1.png');
+
+            &:hover{
+                background-image: url('../images/vozila_ikone/vlak_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/vlak_3.png');
+        }
     }
 
-    &.bus{
-        background-image: url('../images/vozila_ikone/autobus_1.png');
+    &.motorcycle {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/moto_1.png');
+            background-position-y:11px;
+
+            &:hover{
+                background-image: url('../images/vozila_ikone/moto_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/moto_3.png');
+        }
     }
 
-    &.bus:hover{
-        background-image: url('../images/vozila_ikone/autobus_2.png');
+    &.airplane {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/avion_1.png');
+
+            &:hover{
+                background-image: url('../images/vozila_ikone/avion_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/avion_3.png');
+        }
     }
 
-    &.bus:active{
-        background-image: url('../images/vozila_ikone/autobus_3.png');
-    }
+    &.ferry {
+        label {
+            background-repeat:no-repeat;
+            background-image: url('../images/vozila_ikone/brod_1.png');
+            background-position-y:11px;
 
-    &.train-tram-subway{
-        background-image: url('../images/vozila_ikone/avion_1.png');
-    }
-
-    &.train-tram-subway:hover{
-        background-image: url('../images/vozila_ikone/avion_2.png');
-    }
-
-    &.train-tram-subway:active{
-        background-image: url('../images/vozila_ikone/avion_3.png');
-    }
-
-    &.motorcycle{
-        background-image: url('../images/vozila_ikone/brod_1.png');
-    }
-
-    &.motorcycle:hover{
-        background-image: url('../images/vozila_ikone/brod_2.png');
-    }
-
-    &.motorcycle:active{
-        background-image: url('../images/vozila_ikone/brod_3.png');
-    }
-
-    &.airplane{
-        background-image: url('../images/vozila_ikone/moto_1.png');
-    }
-
-    &.airplane:hover{
-        background-image: url('../images/vozila_ikone/moto_2.png');
-    }
-
-    &.airplane:active{
-        background-image: url('../images/vozila_ikone/moto_3.png');
-    }
-
-    &.ferry{
-        background-image: url('../images/vozila_ikone/vlak_1.png');
-    }
-
-    &.ferry:hover{
-        background-image: url('../images/vozila_ikone/vlak_2.png');
-    }
-
-    &.ferry:active{
-        background-image: url('../images/vozila_ikone/vlak_3.png');
+            &:hover{
+                background-image: url('../images/vozila_ikone/brod_2.png');
+            }
+        }
+        input:checked + label {
+            background-image: url('../images/vozila_ikone/brod_3.png');
+        }
     }
 }

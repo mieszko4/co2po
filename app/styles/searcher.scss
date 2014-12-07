@@ -127,7 +127,11 @@ searcher {
 .location{
     margin-bottom:25px;
     display:inline-block;
+
     input{
+        background-color:$gray-dark;
+        color:$grey-light;
+        border:none;
         padding:5px;
     }
 }

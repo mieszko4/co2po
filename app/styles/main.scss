@@ -1,12 +1,23 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$gray-dark: #695d46 !default;
+$grey-light: rgb(204, 193, 142);
+
+$text-color: $gray-dark !default;
+
+$font-family-sans-serif: 'Noto Sans', sans-serif !default;
+$font-family-serif: 'Noticia Text', serif !default;
+
 // bower:scss
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
 @import "trip.scss";
 @import url(http://fonts.googleapis.com/css?family=Noticia+Text);
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
 @import "home.scss";
 @import "searcher.scss";
+@import "statistics.scss";
+
 
 .browsehappy {
     margin: 0.2em 0;
@@ -23,15 +34,23 @@ body {
     padding-bottom: 20px;
 }
 
+h2{
+    font:$font-family-serif;
+    color:$text-color;
+    font-weight:bold;
+}
 
+p{
+    font: $font-family-serif;
+}
 /* Custom page header */
 .header {
     margin-top: 50px;
     font-size: 14px;
     font-weight: bold;
     line-height: 15px;
-    color:#695d46;
-    font-family: 'Noticia Text', serif;
+    color: $text-color;
+    font-family: $font-family-serif;
     /* Make the masthead heading the same height as the navigation */
     h3 {
         margin-top: 0;
@@ -40,7 +59,6 @@ body {
         padding-bottom: 19px;
     }
 }
-
 
 .container-narrow > hr {
     margin: 30px 0;

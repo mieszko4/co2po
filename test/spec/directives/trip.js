@@ -12,9 +12,9 @@ describe('Directive: trip', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
+  it('should have no text', inject(function ($compile) {
     element = angular.element('<trip></trip>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the trip directive');
+    expect(element.text()).toBe('');
   }));
 });

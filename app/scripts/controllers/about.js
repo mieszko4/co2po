@@ -28,18 +28,27 @@ angular.module('co2poApp')
       },
     ];
 
-    $scope.goal = {
-        text: 'Motivate user in a fun way to use means of transport<br>that emitts at least carbon dioxside in the athmosphere.'
+    $scope.project = {
+        goal: 'Motivate user in a fun way to use means of transport<br>that emits at least carbon dioxside in the athmosphere.',
+        why: 'Greenr was developed as part of <a target="_blank" href="https://koding.com/">Koding global virtual hackaton</a>'
     };
 
-    $scope.kodingHastag = {
-        name: '#koding',
-        link: 'https://twitter.com/koding'
+    $scope.koding = {
+        name: 'Koding',
+        hastag: '#koding',
+        twitterLink: 'https://twitter.com/koding',
+        pageLink: 'https://koding.com/'
     };
 
-    $scope.hackatonHastag = {
-        name: '#hackaton',
-        link: 'https://twitter.com/hashtag/hackathon'
+    $scope.hackaton = {
+        name: 'Hackaton',
+        hastag: '#hackaton',
+        twitterLink: 'https://twitter.com/hashtag/hackathon'
+    };
+
+    $scope.greenrGithub = {
+        name: 'Greenr Github account',
+        githubLink: 'https://github.com/mieszko4/co2po'
     };
   });
 

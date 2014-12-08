@@ -1,4 +1,4 @@
-#Greenr
+#Green'r
 
 ##Description
 A web application that motivates the user to use the means of transport that emits the least amount of CO2. 
@@ -13,11 +13,11 @@ impact on the environment etc).
 
 ###Functionalities
 
-> displaying information about the effects of CO2
-> displaying CO2 emission relative to each featured vehicle per kilometer
-> calculating CO2 emission depending on the selected means of transport and calculated distance from point A to B
+- displaying information about the effects of CO2
+- displaying CO2 emission relative to each featured vehicle per kilometer
+- calculating CO2 emission depending on the selected means of transport and calculated distance from point A to B
 user feedback
-> share option for social networks
+- share option for social networks
 
 
 ##Screenshots
@@ -29,6 +29,6 @@ user feedback
 
 
 ##APIs used
-> freebase
-> google places
-> commutegreenerinfo
+- freebase
+- google places
+- commutegreenerinfo

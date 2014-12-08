@@ -8,7 +8,7 @@
  * Controller of the co2poApp
  */
 angular.module('co2poApp')
-  .controller('MainCtrl', function ($scope, $location, Vehicle) {
+  .controller('MainCtrl', function ($scope, $location, Vehicle, Firebase) {
     $scope.showResult = false;
     $scope.origin = undefined;
     $scope.destination = undefined;
@@ -38,6 +38,7 @@ angular.module('co2poApp')
     $scope.startTrip = false;
     $scope.distance = undefined;
     $scope.co2Saved = undefined;
+    $scope.showQuestionare = false;
     $scope.runTrip = function () {
       $scope.startTrip = true;
       $scope.distance = $scope.chosenEmission.distance / 1000;
@@ -47,14 +48,18 @@ angular.module('co2poApp')
       angular.element('html, body').animate({
         scrollTop: angular.element('#start-trip').offset().top
       }, 2000);
+      $scope.showQuestionare = true;
     };
     
     $scope.yes = function () {
-      $location.path('/about');
+      Firebase.saveDecision($scope.chosenEmission, $scope.minimumEmission, true);
+      $scope.showQuestionare = false;
     };
     
+    $scope.showShare = false;
     $scope.no = function () {
-      $location.path('/about');
+      Firebase.saveDecision($scope.chosenEmission, $scope.minimumEmission, false);
+      $scope.showQuestionare = false;
     };
     
     $scope.again = function () {

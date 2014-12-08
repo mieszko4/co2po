@@ -36,7 +36,7 @@
 
 <div id="trip-summary" ng-if="startTrip" class="row">
   <div class="share-screen col-md-6 col-md-offset-3">
-    <div ng-if="minimumEmission.vehicle.type != chosenEmission.vehicle.type">
+    <div ng-show="showQuestionare" ng-if="minimumEmission.vehicle.type != chosenEmission.vehicle.type">
       <h2>Did you change your mind?</h2>
       <button ng-click="yes()" class="btn btn-primary">Yes</button>
       <button ng-click="no()" class="btn btn-default">No</button>

@@ -34,7 +34,7 @@
 
         <div class="footer row">
             <div class="col-xs-12">
-                <p><span class="glyphicon glyphicon-heart"></span> from the <a href="#/about">Croders team</a></p>
+                <p><span class="glyphicon glyphicon-heart"></span> from the <a href="#/about">Croders team</a><span id="mind-changers" style="display:none;"> | <strong class="count-people"></strong> people changed their minds already to save <strong class="count-co2"></strong> <span class="unit">g of CO<sub>2</sub></span></span></p>
             </div>
         </div>
     </div>
@@ -84,6 +84,7 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
     <script src="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -99,6 +100,7 @@
         <script src="scripts/directives/trip.js"></script>
         <script src="scripts/directives/share.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/services/firebase.js"></script>
         <!-- endbuild -->
 </body>
 </html>

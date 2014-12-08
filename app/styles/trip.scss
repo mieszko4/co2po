@@ -9,37 +9,37 @@
         .vehicle {
             position: absolute;
             display: block;
-            width: 50px;
+            width: 100px;
             height: 50px;
 
             &.car {
                 background-repeat: no-repeat;
-                background-image: url('../images/vozila_ikone/auto_3.png');
+                background-image: url('../images/vehicle_trip/auto-prema-dolje.png');
             }
 
             &.bus {
                 background-repeat: no-repeat;
-                background-image: url('../images/vozila_ikone/autobus_3.png');
+                background-image: url('../images/vehicle_trip/autobus-prema-dolje.png');
             }
 
             &.train-tram-subway {
                 background-repeat: no-repeat;
-                background-image: url('../images/vozila_ikone/vlak_3.png');
+                background-image: url('../images/vehicle_trip/vlak-prema-dolje.png');
             }
 
             &.motorcycle {
                 background-repeat: no-repeat;
-                background-image: url('../images/vozila_ikone/moto_3.png');
+                background-image: url('../images/vehicle_trip/moto-prema-dolje.png');
             }
 
             &.airplane {
                 background-repeat: no-repeat;
-                background-image: url('../images/vozila_ikone/avion_3.png');
+                background-image: url('../images/vehicle_trip/avion-prema-d.png');
             }
 
             &.ferry {
                 background-repeat: no-repeat;
-                background-image: url('../images/vozila_ikone/brod_3.png');
+                background-image: url('../images/vehicle_trip/brod-prema-d.png');
             }
         }
 

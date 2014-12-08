@@ -1,13 +1,11 @@
 <div id="choose-location" class="row">
-    <div class="home-content">
-      <aside class="statistic col-md-3">
-        <statistics origin="origin" destination="origin"></statistics>
-      </aside>
+  <aside class="statistic col-md-3">
+    <statistics once="true" origin="origin" destination="origin"></statistics>
+  </aside>
 
-      <div class="motivation col-md-5">
-        <searcher process-result="processResult(origin, destination, vehicle)"></searcher>
-      </div>
-    </div>
+  <div class="motivation col-md-6">
+    <searcher process-result="processResult(origin, destination, vehicle)"></searcher>
+  </div>
 </div>
 
 <div id="search-result" ng-if="showResult">
@@ -40,7 +38,8 @@
       <button ng-click="yes()" class="btn btn-primary">Yes</button>
       <button ng-click="not()" class="btn btn-default">No</button>
     </div>
-
+    
+    <share min-emission="minimumEmission" chosen-emission="chosenEmission"></share>
     <p>Share on:</p>
 
     <share min-emission="minimumEmission" chosen-emission="chosenEmission" class="social-icons-screen"></share>

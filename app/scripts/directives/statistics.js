@@ -9,11 +9,11 @@
 angular.module('co2poApp')
   .directive('statistics', function (Vehicle) {
     return {
-      scope: { origin: '=', destination: '=', processCo2s: '&' },
+      scope: { origin: '=', destination: '=', processCo2s: '&', once: '@' },
       templateUrl: 'views/directives/statistics.html',
       restrict: 'E',
       link: function (scope) {
-        scope.$watchCollection('[origin, destination]', function () {
+        var refreshStatistics = function () {
           if (typeof scope.origin === 'undefined') {
             scope.origin = {
               lat: 45.374546 + (Math.random() * 5 - 2.5),
@@ -43,7 +43,15 @@ angular.module('co2poApp')
             
             scope.processCo2s({ co2s: co2s });
           });
-        });
+        };
+        
+        if (scope.once) {
+          refreshStatistics();
+        } else {
+          scope.$watchCollection('[origin, destination]', function () {
+            refreshStatistics();
+          });
+        };
       }
     };
   });

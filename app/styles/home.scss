@@ -25,3 +25,50 @@
 .motivation{
     background-color: rgba(255,255,255,0.7);
 }
+
+
+
+.social-icons-header ul {
+
+  text-decoration: none;
+  color: transparent;
+  font: 0px/0 a;
+  text-shadow: none;
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+
+      a {
+        display: block;
+        height: 30px;
+        width: 30px;
+        background-repeat: no-repeat;
+        padding-right: 40px;
+
+        &.social-icon-facebook {
+            background-image: url('../images/social/greenr_facebook-gumb--pasivan.png');
+        }
+
+        &.social-icon-facebook:hover {
+          background-image: url('../images/social/greenr_facebook-gumb--aktivan.png');
+        }
+
+        &.social-icon-twitter {
+          background-image: url('../images/social/greenr_twitter-gumb--pasivan.png');
+        }
+
+        &.social-icon-twitter:hover {
+          background-image: url('../images/social/greenr_twitter-gumb--aktivan.png');
+        }
+
+        &.social-icon-google {
+          background-image: url('../images/social/greenr_googleplus-gumb--pasivan.png');
+        }
+
+        &.social-icon-google:hover {
+          background-image: url('../images/social/greenr_googleplus-gumb--aktivan.png');
+        }
+      }
+    }
+}

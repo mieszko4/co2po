@@ -97,3 +97,35 @@ p{
 .home-content{
     margin-top: 50px;
 }
+
+
+
+@media (max-width: $screen-sm-max) {
+  body {
+    padding-top: 0;
+  }
+  
+  .header {
+    margin-top: 0;
+  }
+  .home-content {
+    margin-left: 0;
+  }
+  
+  .slogan {
+    margin-left: 0;
+  }
+  
+  .motivation {
+    margin-left: 0;
+    padding-top: 20px;
+  }
+  
+  .statistic {
+    padding-top: 20px;
+  }
+  
+  .footer {
+    padding-top: 20px;
+  }
+}

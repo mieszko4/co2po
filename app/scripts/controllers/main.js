@@ -54,4 +54,11 @@ angular.module('co2poApp')
     $scope.no = function () {
       $location.path('/about');
     };
+    
+    $scope.again = function () {
+      //TODO: move to directive
+      angular.element('html, body').animate({
+        scrollTop: 0
+      }, 1000);
+    };
   });

@@ -17,6 +17,7 @@ impact on the environment etc).
 - displaying CO2 emission relative to each featured vehicle per kilometer
 - calculating CO2 emission depending on the selected means of transport and calculated distance from point A to B
 user feedback
+- fetching random information about impact of carbon dioxide emissions on environment from freebase
 - share option for social networks
 
 

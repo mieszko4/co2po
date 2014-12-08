@@ -1,50 +1,85 @@
 .trip {
-  position: relative;
-  .trip-path {
-    margin: 0 auto;
-    width: 300px;
     position: relative;
-    
-    .vehicle {
-      position: absolute;
-      display: block;
-      width: 50px;
-      height: 50px;
-      background: blue;
+
+    .trip-path {
+        margin: 0 auto;
+        width: 300px;
+        position: relative;
+
+        .vehicle {
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 50px;
+
+            &.car {
+                background-repeat: no-repeat;
+                background-image: url('../images/vozila_ikone/auto_3.png');
+            }
+
+            &.bus {
+                background-repeat: no-repeat;
+                background-image: url('../images/vozila_ikone/autobus_3.png');
+            }
+
+            &.train-tram-subway {
+                background-repeat: no-repeat;
+                background-image: url('../images/vozila_ikone/vlak_3.png');
+            }
+
+            &.motorcycle {
+                background-repeat: no-repeat;
+                background-image: url('../images/vozila_ikone/moto_3.png');
+            }
+
+            &.airplane {
+                background-repeat: no-repeat;
+                background-image: url('../images/vozila_ikone/avion_3.png');
+            }
+
+            &.ferry {
+                background-repeat: no-repeat;
+                background-image: url('../images/vozila_ikone/brod_3.png');
+            }
+        }
+
+        canvas {
+            display: block;
+        }
     }
-    
-    canvas {
-      display: block;
+
+    .distance {
+        position: fixed;
+        bottom: 0;
+        right: 0;
     }
-  }
-  
-  .distance {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-  }
-  
-  random-fact {
-    position: absolute;
-    width: 200px;
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.7);
-    
-    opacity: 1;
-    transition: opacity 1s;
-    
-    &.not-active {
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 1s;
+
+    random-fact {
+        position: absolute;
+        width: 200px;
+        padding: 10px 20px;
+        background: rgba(255, 255, 255, 0.7);
+        opacity: 1;
+        transition: opacity 1s;
+
+        &.not-active {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        &.left {
+            left: 0;
+        }
+
+        &.right {
+            right: 0;
+        }
     }
-    
-    &.left {
-      left: 0;
+}
+
+.distance {
+    .unit {
+        font-size: 10px;
     }
-    
-    &.right {
-      right: 0;
-    }
-  }
 }

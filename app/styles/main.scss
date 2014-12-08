@@ -102,6 +102,12 @@ p{
   padding-top: 20px;
 }
 
+.about {
+  ul {
+    list-style-type: none;
+  }
+}
+
 @media (max-width: $screen-sm-max) {
   body {
     padding-top: 0;

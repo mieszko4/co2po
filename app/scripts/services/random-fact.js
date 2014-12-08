@@ -14,31 +14,31 @@ angular.module('co2poApp')
     var messages = [
         {
             text: 'You will save <strong>{{0.024 *savedCo2 | number:2}}</strong> trees',
-            image: '../images/path_icons/treese.png'
+            image: 'images/path_icons/treese.png'
         },
         {
             text: 'You will save <strong>{{0.435 * savedCo2 | number:2}}</strong> liters of petrol',
-            image: '../images/path_icons/petrol.png'
+            image: 'images/path_icons/petrol.png'
         },
         {
             text: 'You will reduce carbon emission equivalent of eating <strong>{{2025 * savedCo2 | number:2}}</strong> kilos of steak per year',
-            image: '../images/path_icons/steak.png'
+            image: 'images/path_icons/steak.png'
         },
         {
             text: 'You will reduce carbon emission equivalent of <strong>{{2.4 * savedCo2 | number:2}}</strong> dollars of clothes',
-            image: '../images/path_icons/clothes.png'
+            image: 'images/path_icons/clothes.png'
         },
         {
             text: 'By spending 2 hours per week between the sheets you annualy save <strong>900</strong> kg of CO<sub>2</sub>. Make love not CO<sub>2</sub> &lt;3',
-            image: '../images/path_icons/kissing.png'
+            image: 'images/path_icons/kissing.png'
         },
         {
             text: 'Sea level rose <strong>17</strong> centimeters over the last century',
-            image: '../images/path_icons/ship.png'
+            image: 'images/path_icons/ship.png'
         },
         {
             text: 'Greenland and Antarctica are losing <strong>500</strong> cubic kilometers of ice per year',
-            image: '../images/path_icons/ice.png'
+            image: 'images/path_icons/ice.png'
         }
     ];
 
@@ -46,7 +46,7 @@ angular.module('co2poApp')
 
     var service = {
       getFact: function (term, savedCo2) {
-        if(counter < messages.length) {
+        if (savedCo2 > 0 && counter < messages.length) {
             var deferred = $q.defer();
             
             var message = messages[counter];

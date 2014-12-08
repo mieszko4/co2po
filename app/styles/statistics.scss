@@ -1,0 +1,52 @@
+﻿.statistic {
+    h2 {
+        font-size:14px;
+    }
+    ul {
+
+         padding-left:0;
+    }
+   
+    .vehicle {
+        display:block;
+        background-position-y:15px;
+        p {
+            font-size:25px;
+            font-weight:bold;
+            padding-left: 50px;
+        }
+        .unit {
+            font-size:10px;
+        }
+
+    }
+    .car {
+        background-repeat:no-repeat;
+        background-image: url('../images/vozila_ikone/auto_3.png');
+    }
+
+    .bus {
+        background-repeat:no-repeat;
+        background-image: url('../images/vozila_ikone/autobus_3.png');
+    }
+
+    .train-tram-subway {
+        background-repeat:no-repeat;
+        background-image: url('../images/vozila_ikone/vlak_3.png');
+    }
+
+    .motorcycle {
+        background-repeat:no-repeat;
+        background-image: url('../images/vozila_ikone/moto_3.png');
+    }
+
+    .airplane {
+        background-repeat:no-repeat;
+        background-image: url('../images/vozila_ikone/avion_3.png');
+    }
+
+    .ferry {
+        background-repeat:no-repeat;
+        background-image: url('../images/vozila_ikone/brod_3.png');
+     }
+}

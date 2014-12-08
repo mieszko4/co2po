@@ -21,7 +21,11 @@ user feedback
 
 
 ##Screenshots
-
+![home](design/1.png)
+![motivate](design/2.png)
+![path](design/3.png)
+![share](design/4.png)
+![about](design/5.png)
 
 
 ##APIs used

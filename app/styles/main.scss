@@ -98,7 +98,9 @@ p{
     margin-top: 50px;
 }
 
-
+.footer {
+  padding-top: 20px;
+}
 
 @media (max-width: $screen-sm-max) {
   body {
@@ -122,10 +124,6 @@ p{
   }
   
   .statistic {
-    padding-top: 20px;
-  }
-  
-  .footer {
     padding-top: 20px;
   }
 }

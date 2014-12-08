@@ -46,4 +46,12 @@ angular.module('co2poApp')
         scrollTop: angular.element('#start-trip').offset().top
       }, 2000);
     };
+    
+    $scope.yes = function () {
+      $location.path('/about');
+    };
+    
+    $scope.no = function () {
+      $location.path('/about');
+    };
   });

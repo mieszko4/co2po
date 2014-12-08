@@ -1,19 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Noticia+Text);
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+
 $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
-$gray-dark: #695d46 !default;
+$grey-dark: #695d46;
 $grey-light: rgb(204, 193, 142);
 
-$text-color: $gray-dark !default;
+$text-color: $grey-dark;
 
-$font-family-sans-serif: 'Noto Sans', sans-serif !default;
-$font-family-serif: 'Noticia Text', serif !default;
+$font-family-sans-serif: 'Noto Sans', sans-serif;
+$font-family-serif: 'Noticia Text', serif;
 
 // bower:scss
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
 @import "trip.scss";
-@import url(http://fonts.googleapis.com/css?family=Noticia+Text);
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+
 @import "home.scss";
 @import "searcher.scss";
 @import "statistics.scss";
@@ -35,13 +37,13 @@ body {
 }
 
 h2{
-    font:$font-family-serif;
+    font-family:$font-family-serif;
     color:$text-color;
     font-weight:bold;
 }
 
 p{
-    font: $font-family-serif;
+    font-family: $font-family-serif;
 }
 /* Custom page header */
 .header {
@@ -81,4 +83,8 @@ p{
     p + h4 {
         margin-top: 28px;
     }
+}
+
+.home-content{
+    margin-top: 50px;
 }

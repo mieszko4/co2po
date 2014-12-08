@@ -27,4 +27,19 @@ angular.module('co2poApp')
         image: ''
       }
     ];
+
+    $scope.goal = {
+        text: 'Motivate user in a fun way to use means of transport that emitts at least carbon dioxside in the athmosphere.'
+    };
+
+    $scope.kodingHastag = {
+        name: '#koding',
+        link: 'https://twitter.com/koding'
+    };
+
+    $scope.hackatonHastag = {
+        name: '#hackaton',
+        link: 'https://twitter.com/hashtag/hackathon'
+    };
   });
+

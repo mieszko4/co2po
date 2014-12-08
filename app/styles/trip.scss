@@ -66,11 +66,21 @@
 
     random-fact {
         position: absolute;
-        width: 200px;
+        width: 250px;
         padding: 10px 20px;
-        background: rgba(255, 255, 255, 0.7);
+        background: transparent;
         opacity: 1;
         transition: opacity 1s;
+        
+        img {
+          max-width: 100%;
+        }
+        
+        p { 
+          background: rgba(255, 255, 255, 0.7);
+          padding: 8px;
+          margin-top: 5px;
+        }
 
         &.not-active {
             visibility: hidden;

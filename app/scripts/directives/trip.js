@@ -25,9 +25,8 @@ angular.module('co2poApp')
       restrict: 'E',
       link: function (scope, element) {
         //get height
-        var iterations = Math.floor(scope.distance / 100);
+        var iterations = Math.floor(scope.distance / 100) + 7;
         iterations = (iterations < 20) ? iterations : 20;
-        iterations = (iterations > 2) ? iterations : 2;
         scope.height = (2 + iterations) * inc;
         
         element.height(scope.height);

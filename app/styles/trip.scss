@@ -9,8 +9,8 @@
         .vehicle {
             position: absolute;
             display: block;
-            width: 100px;
-            height: 50px;
+            width: 130px;
+            height: 80px;
 
             &.car {
                 background-repeat: no-repeat;
@@ -19,7 +19,7 @@
 
             &.bus {
                 background-repeat: no-repeat;
-                background-image: url('../images/vehicle_trip/autobus-prema-dolje.png');
+                background-image: url('../images/vehicle_trip/bus-prema-dolje.png');
             }
 
             &.train-tram-subway {
@@ -91,4 +91,8 @@
     .unit {
         font-size: 10px;
     }
+}
+
+#trip-summary{
+    margin-top:30px
 }

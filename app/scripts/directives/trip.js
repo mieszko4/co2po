@@ -20,7 +20,7 @@ angular.module('co2poApp')
     ];
     
     return {
-      scope: { distance: '@', vehicleType: '@', lineColor: '@' },
+      scope: { distance: '@', vehicleType: '@', lineColor: '@', savedCo2: '@' },
       templateUrl: 'views/directives/trip.html',
       restrict: 'E',
       link: function (scope, element) {
@@ -74,7 +74,7 @@ angular.module('co2poApp')
             
             //add random-fact
             var randomIndex = Math.ceil(Math.random() * keywords.length);
-            var $randomFact = $compile('<random-fact class="not-active" trigger-on-scroll="true" term="' + keywords[randomIndex] + '"></random-fact>')(scope);
+            var $randomFact = $compile('<random-fact saved-co2="' + scope.savedCo2 + '" class="not-active" trigger-on-scroll="true" term="' + keywords[randomIndex] + '"></random-fact>')(scope);
             $randomFact.css({ top: y0 });
             
             //alertnate left/right

@@ -9,11 +9,11 @@
 angular.module('co2poApp')
   .directive('randomFact', function (randomFact, $window) {
     return {
-      scope: { term: '@', triggerOnScroll: '@' },
+      scope: { term: '@', triggerOnScroll: '@', savedCo2: '@' },
       templateUrl: 'views/directives/random-fact.html',
       restrict: 'E',
       link: function (scope, element) {
-        randomFact.getFact(scope.term).then(function(fact) {
+        randomFact.getFact(scope.term, scope.savedCo2).then(function(fact) {
             scope.fact =fact;
         });
         

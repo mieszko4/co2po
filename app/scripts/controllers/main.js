@@ -37,9 +37,11 @@ angular.module('co2poApp')
     
     $scope.startTrip = false;
     $scope.distance = undefined;
+    $scope.co2Saved = undefined;
     $scope.runTrip = function () {
       $scope.startTrip = true;
       $scope.distance = $scope.chosenEmission.distance / 1000;
+      $scope.co2Saved = $scope.chosenEmission.co2 - $scope.minimumEmission.co2;
       
       //TODO: move to directive
       angular.element('html, body').animate({

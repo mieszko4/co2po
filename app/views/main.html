@@ -31,7 +31,7 @@
 
 <a id="start-trip"></a>
 <div id="trip" ng-if="startTrip">
-  <trip distance="{{distance}}" vehicle-type="{{minimumEmission.vehicle.type}}" line-color="#428bca"></trip>
+  <trip distance="{{distance}}" saved-co2={{co2Saved}} vehicle-type="{{minimumEmission.vehicle.type}}" line-color="#428bca"></trip>
 </div>
 
 <div id="trip-summary" ng-if="startTrip" class="row">

@@ -8,24 +8,24 @@
  * Factory in the co2poApp.
  */
 angular.module('co2poApp')
-  .factory('randomFact', function ($resource, $q) {
+  .factory('randomFact', function ($resource, $q, $interpolate) {
     var api = 'https://www.googleapis.com/freebase/v1/';
 
     var messages = [
         {
-            text: 'You will save <strong>{{0.024 *emissionSaved}}</strong> trees',
+            text: 'You will save <strong>{{0.024 *savedCo2 | number:2}}</strong> trees',
             image: '../images/path_icons/treese.png'
         },
         {
-            text: 'You will save <strong>{{0.435 * emissionSaved}}</strong> liters of petrol',
+            text: 'You will save <strong>{{0.435 * savedCo2 | number:2}}</strong> liters of petrol',
             image: '../images/path_icons/petrol.png'
         },
         {
-            text: 'You will reduce carbon emission equivalent of eating <strong>{{2025 * emissionSaved}}</strong> kilos of steak per year',
+            text: 'You will reduce carbon emission equivalent of eating <strong>{{2025 * savedCo2 | number:2}}</strong> kilos of steak per year',
             image: '../images/path_icons/steak.png'
         },
         {
-            text: 'You will reduce carbon emission equivalent of <strong>{{2.4 * emissionSaved}}</strong> dollars of clothes',
+            text: 'You will reduce carbon emission equivalent of <strong>{{2.4 * savedCo2 | number:2}}</strong> dollars of clothes',
             image: '../images/path_icons/clothes.png'
         },
         {
@@ -45,12 +45,19 @@ angular.module('co2poApp')
     var counter = 0;
 
     var service = {
-      getFact: function (term) {
-
+      getFact: function (term, savedCo2) {
         if(counter < messages.length) {
             var deferred = $q.defer();
-            deferred.resolve(messages[counter]);
+            
+            var message = messages[counter];
             counter++;
+            
+            message = {
+              text: $interpolate(message.text)({ savedCo2: savedCo2/1000 }),
+              image: message.image
+            }
+            
+            deferred.resolve(message);
             return deferred.promise;
         }
 

@@ -34,10 +34,10 @@
   <trip distance="{{distance}}" vehicle-type="{{chosenEmission.vehicle.type}}" line-color="#428bca"></trip>
 </div>
 
-<div id="trip-summary" ng-if="startTrip">
-  <div class="jumbotron">
+<div id="trip-summary" ng-if="startTrip" class="row">
+  <div class="share-screen col-md-6 col-md-offset-3">
     <div ng-if="minimumEmission.vehicle.type != chosenEmission.vehicle.type">
-      <p>Did you change your mind?</p>
+      <h2>Did you change your mind?</h2>
       <button ng-click="yes()" class="btn btn-primary">Yes</button>
       <button ng-click="not()" class="btn btn-default">No</button>
     </div>

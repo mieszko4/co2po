@@ -4,6 +4,7 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 $grey-dark: #695d46;
 $grey-light: rgb(204, 193, 142);
+$brand-primary: #60BC73;
 
 $text-color: $grey-dark;
 
@@ -21,7 +22,6 @@ $font-family-serif: 'Noticia Text', serif;
 @import "statistics.scss";
 @import "loader.scss";
 @import "results.scss";
-
 
 .browsehappy {
     margin: 0.2em 0;
@@ -88,10 +88,11 @@ p{
 }
 
 .social-icons-screen ul {
-  li {
-    list-style-type: none;
-    display: block;
-  }
+    padding-left: 5px;
+      li {
+        list-style-type: none;
+        display: block;
+      }
 }
 
 .home-content{
@@ -132,4 +133,22 @@ p{
   .statistic {
     padding-top: 20px;
   }
+}
+
+.share-screen{
+    background-color:rgba(255, 255, 255, 0.7);
+    padding-left: 20px;
+    padding-top:15px;
+    text-align: center;
+    
+    button{
+        padding-top:10px;
+        padding-left:10px;
+    }
+
+    p{
+        font-size: 20px;      
+        padding-top:10px;
+        padding-left:10px;
+    }
 }

@@ -19,6 +19,15 @@ angular.module('co2poApp')
       'climate change'
     ];
     
+    var strokeColors = {
+      car: 'rgba(7, 71, 102, 0.60)',
+      bus: 'rgba(7, 71, 102, 0.60)',
+      'train-tram-subway': 'rgba(7, 71, 102, 0.60)',
+      motorcycle: 'rgba(7, 71, 102, 0.60)',
+      airplane: 'rgba(149, 212, 222, 0.72)',
+      ferry: 'rgba(149, 212, 222, 0.72)'
+    };
+    
     return {
       scope: { distance: '@', vehicleType: '@', lineColor: '@', savedCo2: '@' },
       templateUrl: 'views/directives/trip.html',
@@ -39,7 +48,7 @@ angular.module('co2poApp')
         var context = canvas.getContext('2d');
         
         context.lineWidth = 10;
-        context.strokeStyle = scope.lineColor;
+        context.strokeStyle = strokeColors[scope.vehicleType] || scope.lineColor;
         
         var drawPath = function (context) {
           context.beginPath();

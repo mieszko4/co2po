@@ -13,31 +13,31 @@ angular.module('co2poApp')
 
     var messages = [
         {
-            text: 'You will save 0.024 * {{emissionSaved}} treese',
+            text: 'You will save <strong>{{0.024 *emissionSaved}}</strong> trees',
             image: '../images/path_icons/treese.png'
         },
         {
-            text: 'You will save 0.435 * {{emissionSaved}} liters of petrol',
+            text: 'You will save <strong>{{0.435 * emissionSaved}}</strong> liters of petrol',
             image: '../images/path_icons/petrol.png'
         },
         {
-            text: 'You will reduce carbon emission equivalent of eating 2025 * {{emissionSaved}} kilos of steak per year',
+            text: 'You will reduce carbon emission equivalent of eating <strong>{{2025 * emissionSaved}}</strong> kilos of steak per year',
             image: '../images/path_icons/steak.png'
         },
         {
-            text: 'You will reduce carbon emission equivalent of 2.4 * {{emissionSaved}} dollars of clothes',
+            text: 'You will reduce carbon emission equivalent of <strong>{{2.4 * emissionSaved}}</strong> dollars of clothes',
             image: '../images/path_icons/clothes.png'
         },
         {
-            text: 'By spending 2 hours per week between the sheets you annualy save 900 kilos of CO2. Make love not CO2 <3',
+            text: 'By spending 2 hours per week between the sheets you annualy save <strong>900</strong> kg of CO<sub>2</sub>. Make love not CO<sub>2</sub> &lt;3',
             image: '../images/path_icons/kissing.png'
         },
         {
-            text: 'Sea level rose 17 centimeters over the last century',
+            text: 'Sea level rose <strong>17</strong> centimeters over the last century',
             image: '../images/path_icons/ship.png'
         },
         {
-            text: 'Greenland and Antarctica are losing 500 cubic kilometers of ice per year',
+            text: 'Greenland and Antarctica are losing <strong>500</strong> cubic kilometers of ice per year',
             image: '../images/path_icons/ice.png'
         }
     ];

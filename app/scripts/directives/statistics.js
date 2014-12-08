@@ -51,7 +51,7 @@ angular.module('co2poApp')
           scope.$watchCollection('[origin, destination]', function () {
             refreshStatistics();
           });
-        };
+        }
       }
     };
   });

@@ -19,7 +19,7 @@ angular.module('co2poApp')
         type: 'bus'
       },
       {
-        name: 'Train/Tram/Subway',
+        name: 'Train',
         type: 'train-tram-subway'
       },
       {

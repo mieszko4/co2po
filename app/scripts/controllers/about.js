@@ -15,6 +15,10 @@ angular.module('co2poApp')
         image: ''
       },
       {
+        name: 'Anamarija Mišmaš',
+        image: ''
+      },
+      {
         name: 'Tea Pavić',
         image: ''
       },
@@ -22,14 +26,10 @@ angular.module('co2poApp')
         name: 'Martina Petraš',
         image: ''
       },
-      {
-        name: 'Anamarija Mišmaš',
-        image: ''
-      }
     ];
 
     $scope.goal = {
-        text: 'Motivate user in a fun way to use means of transport that emitts at least carbon dioxside in the athmosphere.'
+        text: 'Motivate user in a fun way to use means of transport<br>that emitts at least carbon dioxside in the athmosphere.'
     };
 
     $scope.kodingHastag = {

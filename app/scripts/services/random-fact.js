@@ -55,7 +55,7 @@ angular.module('co2poApp')
             message = {
               text: $interpolate(message.text)({ savedCo2: savedCo2/1000 }),
               image: message.image
-            }
+            };
             
             deferred.resolve(message);
             return deferred.promise;

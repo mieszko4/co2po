@@ -25,7 +25,9 @@
         <div class="header row">
             <a class="col-xs-3" href="/"><img src="./images/greenr_logo-header.png" alt="" /></a>
             <p class="slogan col-xs-7">Get motivated and reduce<br /> your carbon emission <br />while traveling!</p>
-            <div class="share coll-xs-2"><img src="./images/social/greenr_facebook-gumb--pasivan.png" alt="" /><img class="twitter" src="./images/social/greenr_twitter-gumb--pasivan.png" alt="" /></div>
+            <div class="share coll-xs-2">
+                <share min-emission="minimumEmission" chosen-emission="chosenEmission" class="social-icons-header"></share>
+            </div>
         </div>
 
         <div ng-view=""></div>

@@ -1,9 +1,6 @@
-<h2>Statistics</h2>
-
-<p>For distance about {{distance}} <span class="unit">km</span></p>
-<ul ng-repeat="co2 in co2s">
-    <li ng-class="co2.vehicle.name" class="statistic-vehicle">
-        <p>{{co2.vehicle.name}}</p>
-        <progressbar max="maxCO2" value="co2.co2">{{co2.co2}} <span class="unit">g CO<sub>2</sub></span></progressbar>
+<h2>Avarage <span class="unit"> CO<sub>2</sub></span> emission per vehicle for distance of {{distance}} <span class="unit">km</span></h2>
+<ul>
+    <li ng-repeat="co2 in co2s" class="vehicle" ng-class="co2.vehicle.type">
+        <p>{{co2.co2}} <span class="unit">g </span> </p>
     </li>
 </ul>

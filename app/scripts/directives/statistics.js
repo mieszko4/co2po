@@ -16,15 +16,15 @@ angular.module('co2poApp')
         var refreshStatistics = function () {
           if (typeof scope.origin === 'undefined') {
             scope.origin = {
-              lat: 45.374546 + (Math.random() * 5 - 2.5),
-              lng: 15.017002 + (Math.random() * 5 - 2.5)
+              lat: 45.374546, //+ (Math.random() * 5 - 2.5),
+              lng: 15.017002 //+ (Math.random() * 5 - 2.5)
             };
           }
           
           if (typeof scope.destination === 'undefined') {
             scope.destination = {
-              lat: 45.815123 + (Math.random() * 5 - 2.5),
-              lng: 15.981682 + (Math.random() * 5 - 2.5)
+              lat: 45.815123, //+ (Math.random() * 5 - 2.5),
+              lng: 15.981682 //+ (Math.random() * 5 - 2.5)
             };
           }
           

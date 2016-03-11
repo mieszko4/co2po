@@ -8,7 +8,7 @@ impact on the environment etc).
 
 ###Demo
 
-[Demo page](http://greenr.listup.co/)
+[Demo page](http://greenr.listup.audio/)
 
 ###Product goals
 

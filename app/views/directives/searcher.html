@@ -3,11 +3,11 @@
     <fieldset>
         <p>Choose origin and destination:</p>
         <div class="control-group location">
-            <input g-places-autocomplete ng-model="searchForm.origin" type="text" id="origin" name="origin" placeholder="from" required>
+            <input g-places-autocomplete autocomplete="off" ng-model="searchForm.origin" type="text" id="origin" name="origin" placeholder="from" required>
         </div>
 
         <div class="control-group location">
-            <input g-places-autocomplete ng-model="searchForm.destination" type="text" id="destination" name="destination" placeholder="to" required>
+            <input g-places-autocomplete autocomplete="off" ng-model="searchForm.destination" type="text" id="destination" name="destination" placeholder="to" required>
         </div>
 
         <p>Great! Now choose your transportation type:</p>
